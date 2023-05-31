@@ -9,6 +9,7 @@
     body{
         @apply font-[Montserrat]
     }
+    
     li{
         @apply px-4;
         @apply cursor-pointer;
