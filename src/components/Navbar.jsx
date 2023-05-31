@@ -5,12 +5,12 @@ import { HiOutlineMail } from "react-icons/hi";
 import {BsFillPersonLinesFill} from 'react-icons/bs';
 
 const Navbar = () => {
-    const [nav,setNav]=useState(false);
-    const handleClick=()=>setNav(!nav);
+  const [nav,setNav]=useState(false);
+  const handleClick=()=>setNav(!nav);
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-indigo-700 text-gray-300">
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#3A1078] text-gray-300">
       <div>
-        <img src={Logo} alt="logo" style={{ width: "45px" }} />
+        <img src={Logo} alt="logo" style={{ width: "35px" }} />
       </div>
       {/*  menu  */}
 
@@ -28,7 +28,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <ul className={!nav ? 'hidden' :'absolute top-0 left-0 w-full h-screen bg-indigo-700 flex flex-col justify-center items-center'}>
+      <ul className={!nav ? 'hidden' :'absolute top-0 left-0 w-full h-screen bg-[#3A1078] flex flex-col justify-center items-center'}>
         <li className="py-6 text-4xl">Home</li>
         <li className="py-6 text-4xl">About</li>
         <li className="py-6 text-4xl">Skills</li>
