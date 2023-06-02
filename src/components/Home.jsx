@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 
 const Home = () => {
   return (
-    <div name="home" className="w-full h-screen bg-[#3A1078]">
+    <div name="home" className="w-full h-screen bg-[#3A1078] dark:bg-[#21073C]">
       {/* Container */}
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full">
         <p className="text-gray-50 text-lg">Hi, my name is</p>
