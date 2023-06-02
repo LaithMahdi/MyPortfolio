@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import { FaBars, FaTimes,FaGithub,FaLinkedin, FaBehance } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { HiMail } from "react-icons/hi";
 
 const Navbar = () => {
   const [nav,setNav]=useState(false);
@@ -14,11 +14,11 @@ const Navbar = () => {
       {/*  menu  */}
 
       <ul className="hidden md:flex ">
-        <li>Home</li>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Work</li>
-        <li>Contact</li>
+        <li className="hover:font-bold hover:text-[#00FFCA]">Home</li>
+        <li className="hover:font-bold hover:text-[#00FFCA]">About</li>
+        <li className="hover:font-bold hover:text-[#00FFCA]">Skills</li>
+        <li className="hover:font-bold hover:text-[#00FFCA]">Work</li>
+        <li className="hover:font-bold hover:text-[#00FFCA]">Contact</li>
       </ul>
 
       {/* Hamburger */}
@@ -38,27 +38,27 @@ const Navbar = () => {
       {/* Social icons */}
       <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
         <ul>
-            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md">
+            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md font-semibold">
                 <a href="/" className="flex justify-between items-center w-full text-[#3A1078]">
                     Linkedin <FaLinkedin size={30}/>
                 </a>
             </li>
             
-            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md">
+            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md font-semibold">
                 <a href="/" className="flex justify-between items-center w-full text-[#3A1078]">
                     Github <FaGithub size={30}/>
                 </a>
             </li>
 
-            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md">
+            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md font-semibold">
                 <a href="/" className="flex justify-between items-center w-full text-[#3A1078]">
                     Behance <FaBehance size={30}/>
                 </a>
             </li>
 
-            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md">
+            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md font-semibold">
                 <a href="/" className="flex justify-between items-center w-full text-[#3A1078]">
-                    Email <HiOutlineMail size={30}/>
+                    Email <HiMail size={30}/>
                 </a>
             </li>
         </ul>
