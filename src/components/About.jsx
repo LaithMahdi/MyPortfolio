@@ -1,7 +1,14 @@
 import React from "react";
 import pic from "../assets/pic1.jpg";
 import { BsDownload } from "react-icons/bs";
+import { saveAs } from "file-saver";
+import file from '../assets/cv.pdf';
+
 const About = () => {
+  const handleDownload = () => {
+    saveAs(file, "resume.pdf");
+  };
+
   return (
     <div name="about" className="w-full h-screen bg-[#3A1078] text-gray-300 dark:bg-[#21073C]">
       <div className="flex flex-col justify-center items-center w-full h-full">
@@ -38,7 +45,7 @@ const About = () => {
             </p>
             {/* Button */}
             <div className="mt-4">
-              <button className="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-[#00FFCA] hover:border-[#00FFCA] rounded-sm hover:text-[#3A1078] font-semibold">
+              <button onClick={handleDownload} className="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-[#00FFCA] hover:border-[#00FFCA] rounded-sm hover:text-[#3A1078] font-semibold">
                 Download resume{" "}
                 <span className="group-hover:translate-y-1 duration-300">
                   <BsDownload className="ml-4" />

@@ -64,7 +64,7 @@ const Skill = () => {
       id: 8,
       src: django,
       title: "Django",
-      style: "shadow-emerald-600",
+      style: "shadow-emerald-700",
     },
     {
       id: 9,
