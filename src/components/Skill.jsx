@@ -120,7 +120,7 @@ const Skill = () => {
   return (
     <div
       name="skill"
-      className="w-full bg-[#3A1078] text-gray-300 dark:bg-[#21073C] pt-32"
+      className="w-full bg-[#3A1078] text-gray-300 dark:bg-[#21073C] py-32"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center  h-full text-white">
     

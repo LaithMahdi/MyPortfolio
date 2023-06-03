@@ -37,6 +37,7 @@ const Navbar = () => {
         <li className="hover:font-bold hover:text-[#00FFCA]">Home</li>
         <li className="hover:font-bold hover:text-[#00FFCA]">About</li>
         <li className="hover:font-bold hover:text-[#00FFCA]">Skills</li>
+        <li className="hover:font-bold hover:text-[#00FFCA]">Experience</li>
         <li className="hover:font-bold hover:text-[#00FFCA]">Work</li>
         <li className="hover:font-bold hover:text-[#00FFCA]">Contact</li>
       </ul>
