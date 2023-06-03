@@ -20,7 +20,7 @@ const About = () => {
             <img
               src={pic}
               alt="mahdi laith"
-              className="rounded-full shadow-2xl outline-offset-8 outline-dashed outline-2  "
+              className="rounded-full shadow-2xl outline-offset-8 outline-dashed outline-2"
               style={{ width: "20rem", height: "20rem" }}
             />
           </div>
