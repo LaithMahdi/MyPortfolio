@@ -10,7 +10,7 @@ const About = () => {
   };
 
   return (
-    <div name="about" className="w-full h-screen bg-[#3A1078] text-gray-300 dark:bg-[#21073C]">
+    <div name="about" className="w-full h-screen bg-gradient-to-l from-[#21073C] to-[#3A1078] text-gray-300 dark:bg-[#21073C]">
       <div className="flex flex-col justify-center items-center w-full h-full">
         <div className="max-w-[1000px] w-full grid grid-cols-2 gap-8">
           <div className="sm:text-right pb-8 pl-4">

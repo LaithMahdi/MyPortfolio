@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
-import { HiMail } from "react-icons/hi";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { FaTimes, FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
+import { BsGridFill } from "react-icons/bs";
+import { HiArrowSmDown, HiMail } from "react-icons/hi";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -28,23 +28,23 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#3A1078] dark:bg-[#21073C] text-gray-300 z-20'>
+    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-gradient-to-l from-[#21073C] to-[#3A1078] text-gray-300 z-20'>
       <div>
         <img src={Logo} alt="logo" style={{ width: "35px" }} />
       </div>
       {/*  menu  */}
       <ul className="hidden md:flex ">
-        <li className="hover:font-bold hover:text-[#00FFCA]">Home</li>
-        <li className="hover:font-bold hover:text-[#00FFCA]">About</li>
-        <li className="hover:font-bold hover:text-[#00FFCA]">Skills</li>
-        <li className="hover:font-bold hover:text-[#00FFCA]">Experience</li>
-        <li className="hover:font-bold hover:text-[#00FFCA]">Work</li>
-        <li className="hover:font-bold hover:text-[#00FFCA]">Contact</li>
+        <li className="hover:text-[#00FFCA]">Home</li>
+        <li className="hover:text-[#00FFCA]">About</li>
+        <li className="hover:text-[#00FFCA]">Skills</li>
+        <li className="hover:text-[#00FFCA]">Experience</li>
+        <li className="hover:text-[#00FFCA]">Work</li>
+        <li className="hover:text-[#00FFCA]">Contact</li>
       </ul>
 
       {/* Hamburger */}
       <div onClick={handleClick} className="md:hidden z-10">
-        {!nav ? <FaBars /> : <FaTimes />}
+        {!nav ? <BsGridFill /> : <FaTimes />}
       </div>
 
       {/* Mobile menu */}
@@ -56,9 +56,9 @@ const Navbar = () => {
         <li className="py-6 text-4xl">Contact</li>
       </ul>
 
-      <div className="fixed flex-col top-[90%] right-2 md:right-6 animate-bounce bg-white text-[#3A1078] rounded-full">
+      <div className="fixed flex-col top-[90%] right-2 md:right-6 animate-bounce bg-gradient-to-t from-[#21073C] to-[#3A1078] text-white rounded-full shadow-sm shadow-black">
         <button onClick={handleThemeSwitch} className="p-3">
-          {theme === 'dark' ? <MdDarkMode size={20} /> : <MdLightMode size={20} />}
+          <HiArrowSmDown size={20} /> 
         </button>
       </div>
 
