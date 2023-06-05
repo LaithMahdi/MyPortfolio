@@ -1,26 +1,29 @@
-import React from 'react'
+import React from "react";
 
 const Experience = () => {
-    const experiences = [
-        {
-          date: "January 2023 - February 2023",
-          company: "AfterCode",
-          position: "Flutter Developer",
-          description: "I successfully developed a mobile application for managing a healthcare facility, catering to both the administrative staff and patients. This involved conducting a thorough study, designing intuitive interfaces, and seamlessly integrating the Backend system.",
-        },
-        {
-          date: "January 2022 - February 2022",
-          company: "AfterCode",
-          position: "Internship",
-          description: "I have expertise in creating visually captivating and user-friendly websites for restaurants. Additionally, I possess skills in managing automated tests to ensure optimal functionality and performance.",
-        },
-        {
-          date: "January 2020 - Present",
-          company: "Self employed",
-          position: "Freelancer",
-          description: "I specialize in designing user interfaces for websites and mobile applications. I also create logos, posters, and mockups. My designs are visually appealing, intuitive, and tailored to engage target audiences. With a deep understanding of design principles and industry trends, I consistently deliver high-quality work that captivates users.",
-        },
-      ];
+  const experiences = [
+    {
+      date: "January 2023 - February 2023",
+      company: "AfterCode",
+      position: "Flutter Developer",
+      description:
+        "I successfully developed a mobile application for managing a healthcare facility, catering to both the administrative staff and patients. This involved conducting a thorough study, designing intuitive interfaces, and seamlessly integrating the Backend system.",
+    },
+    {
+      date: "January 2022 - February 2022",
+      company: "AfterCode",
+      position: "Internship",
+      description:
+        "I have expertise in creating visually captivating and user-friendly websites for restaurants. Additionally, I possess skills in managing automated tests to ensure optimal functionality and performance.",
+    },
+    {
+      date: "January 2020 - Present",
+      company: "Self employed",
+      position: "Freelancer",
+      description:
+        "I specialize in designing user interfaces for websites and mobile applications. I also create logos, posters, and mockups. My designs are visually appealing, intuitive, and tailored to engage target audiences. With a deep understanding of design principles and industry trends, I consistently deliver high-quality work that captivates users.",
+    },
+  ];
   return (
     <div
       id="experience"
@@ -28,8 +31,12 @@ const Experience = () => {
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center  h-full text-white">
         <div>
-          <h1 className="text-4xl font-bold inline border-b-4 border-[#00FFCA]">Experience</h1>
-          <p className="text-xl py-6">Experienced professional with a proven track record of success</p>
+          <h1 className="text-4xl font-bold inline border-b-4 border-[#00FFCA]">
+            Experience
+          </h1>
+          <p className="text-xl py-6">
+            Experienced professional with a proven track record of success
+          </p>
         </div>
         <div className="w-full sm:w-full md:w-12/12 mt-5">
           {experiences.map((data, index) => (
@@ -59,7 +66,7 @@ const Experience = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

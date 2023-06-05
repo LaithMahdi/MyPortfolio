@@ -2,44 +2,60 @@ import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 import { FaTimes, FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
 import { BsGridFill } from "react-icons/bs";
-import { HiArrowSmDown, HiMail } from "react-icons/hi";
+import { HiArrowSmUp, HiMail } from "react-icons/hi";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme ? savedTheme : "light";
-  });
+  const [backToTop, setBackToTop] = useState(false);
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    /**
+     * Event listener to track scroll position and show/hide the scroll-to-top button.
+     */
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setBackToTop(true);
+      } else {
+        setBackToTop(false);
+      }
+    };
 
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    window.addEventListener("scroll", handleScroll);
 
-  const handleThemeSwitch = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  /**
+   * Scrolls the window to the top of the page.
+   */
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
+  /**
+   * Toggles the mobile menu on/off.
+   */
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-gradient-to-l from-[#21073C] to-[#3A1078] text-gray-300 z-20'>
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-gradient-to-l from-[#21073C] to-[#3A1078] text-gray-300 z-20">
       <div>
         <img src={Logo} alt="logo" style={{ width: "35px" }} />
       </div>
       {/*  menu  */}
       <ul className="hidden md:flex ">
-        <li className="hover:text-[#00FFCA]">Home</li>
-        <li className="hover:text-[#00FFCA]">About</li>
-        <li className="hover:text-[#00FFCA]">Skills</li>
-        <li className="hover:text-[#00FFCA]">Experience</li>
-        <li className="hover:text-[#00FFCA]">Work</li>
-        <li className="hover:text-[#00FFCA]">Contact</li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Home</li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">About</li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Skills</li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Experience</li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Work</li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Contact</li>
       </ul>
 
       {/* Hamburger */}
@@ -48,43 +64,63 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#3A1078] dark:bg-[#21073C] flex flex-col justify-center items-center'}>
-        <li className="py-6 text-4xl">Home</li>
-        <li className="py-6 text-4xl">About</li>
-        <li className="py-6 text-4xl">Skills</li>
-        <li className="py-6 text-4xl">Work</li>
-        <li className="py-6 text-4xl">Contact</li>
+      <ul
+        className={
+          !nav
+            ? "hidden"
+            : "absolute top-0 left-0 w-10/12 h-screen bg-[#3A1078] dark:bg-[#21073C] flex flex-col justify-center items-center transition ease-in-out duration-300 delay-700"
+        }
+      >
+        <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Home</li>
+        <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">About</li>
+        <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Skills</li>
+        <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Work</li>
+        <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Contact</li>
       </ul>
 
-      <div className="fixed flex-col top-[90%] right-2 md:right-6 animate-bounce bg-gradient-to-t from-[#21073C] to-[#3A1078] text-white rounded-full shadow-sm shadow-black">
-        <button onClick={handleThemeSwitch} className="p-3">
-          <HiArrowSmDown size={20} /> 
-        </button>
-      </div>
+      {backToTop && (
+        <div className="fixed flex-col top-[90%] right-2 md:right-6 animate-bounce bg-gradient-to-t from-[#21073C] to-[#3A1078] text-white rounded-full shadow-sm shadow-black">
+          <button onClick={scrollUp} className="p-3">
+            <HiArrowSmUp size={20} />
+          </button>
+        </div>
+      )}
 
       {/* Social icons */}
       <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
         <ul>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md font-semibold">
-            <a href="/" className="flex justify-between items-center w-full text-[#3A1078] dark:text-[#21073C]">
+            <a
+              href="/"
+              className="flex justify-between items-center w-full text-[#3A1078] dark:text-[#21073C]"
+            >
               Linkedin <FaLinkedin size={30} />
             </a>
           </li>
 
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md font-semibold">
-            <a href="/" className="flex justify-between items-center w-full text-[#3A1078] dark:text-[#21073C]">
+            <a
+              href="/"
+              className="flex justify-between items-center w-full text-[#3A1078] dark:text-[#21073C]"
+            >
               Github <FaGithub size={30} />
             </a>
           </li>
 
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md font-semibold">
-            <a href="/" className="flex justify-between items-center w-full text-[#3A1078] dark:text-[#21073C]">
+            <a
+              href="/"
+              className="flex justify-between items-center w-full text-[#3A1078] dark:text-[#21073C]"
+            >
               Behance <FaBehance size={30} />
             </a>
           </li>
 
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-white rounded-md font-semibold">
-            <a href="/" className="flex justify-between items-center w-full text-[#3A1078] dark:text-[#21073C]">
+            <a
+              href="/"
+              className="flex justify-between items-center w-full text-[#3A1078] dark:text-[#21073C]"
+            >
               Email <HiMail size={30} />
             </a>
           </li>
