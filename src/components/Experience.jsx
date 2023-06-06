@@ -60,7 +60,7 @@ const Experience = () => {
               <h2 className="text-xl font-bold text-[#00FFCA] py-1">
                 {data.position}
               </h2>
-              <p className="text-lg mt-1">{data.description}</p>
+              <p className="text-lg mt-1 leading-8">{data.description}</p>
             </div>
           ))}
         </div>

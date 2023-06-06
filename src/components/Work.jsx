@@ -22,7 +22,7 @@ const Work = () => {
       imgUrl:
         'https://cdn.dribbble.com/users/6870886/screenshots/20208089/portfilio1_cover.jpg',
       tech: ['Django', 'CSS','Boottsrap 5','Jquery'],
-      workUrl: 'https://github.com/ShaifArfan/AYANs-portfolio',
+      workUrl: 'https://github.com/',
     },
     {
       title: 'Maklti food app',
@@ -46,7 +46,7 @@ const Work = () => {
               href={work.workUrl}
               target="_blank"
               rel="noreferrer"
-              className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden"
+              className="bg-slate-200 rounded-lg overflow-hidden"
               key={work.title}
             >
               <img
@@ -54,7 +54,7 @@ const Work = () => {
                 alt="work"
                 className="w-full h-36 md:h-48 object-cover"
               />
-              <div className="w-full p-5 text-black dark:text-slate-200 ">
+              <div className="w-full p-5 text-black">
                 <h3 className="text-lg md:text-xl mb-2 md:mb-3 font-semibold">
                   {work.title}
                 </h3>
@@ -62,7 +62,7 @@ const Work = () => {
                   {work.tech.map((item) => (
                     <span
                       key={item}
-                      className="inline-block px-2 py-1 bg-slate-200 dark:bg-slate-900 rounded-md"
+                      className="inline-block px-2 py-1 bg-slate-300 rounded-md"
                     >
                       {item}
                     </span>
