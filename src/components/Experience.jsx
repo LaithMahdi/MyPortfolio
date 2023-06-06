@@ -1,6 +1,7 @@
 import React from "react";
 
 const Experience = () => {
+  // Array of experience objects
   const experiences = [
     {
       date: "January 2023 - February 2023",
@@ -24,6 +25,7 @@ const Experience = () => {
         "I specialize in designing user interfaces for websites and mobile applications. I also create logos, posters, and mockups. My designs are visually appealing, intuitive, and tailored to engage target audiences. With a deep understanding of design principles and industry trends, I consistently deliver high-quality work that captivates users.",
     },
   ];
+
   return (
     <div
       id="experience"
@@ -39,8 +41,8 @@ const Experience = () => {
           </p>
         </div>
         <div className="w-full sm:w-full md:w-12/12 mt-5">
+          {/* Map over the experiences array and render each experience */}
           {experiences.map((data, index) => (
-            // hover:bg-white hover:shadow-2xl
             <div
               key={index}
               className={`relative flex flex-col p-3.5 border-white md:border-b-4 ${
@@ -49,6 +51,7 @@ const Experience = () => {
                   : "md:items-end md:border-r-4 md:text-right"
               } `}
             >
+              {/* Date */}
               <h1
                 className={`absolute top-0 bg-white w-max p-2.5 text-[#3A1078] dark:text-[#21073C] shadow-2xl text-2xl ${
                   index % 2 === 0 ? "left-0" : "md:right-0"
@@ -56,10 +59,13 @@ const Experience = () => {
               >
                 {data.date}
               </h1>
+              {/* Company */}
               <h1 className="pt-14 font-bold text-3xl">{data.company}</h1>
+              {/* Position */}
               <h2 className="text-xl font-bold text-[#00FFCA] py-1">
                 {data.position}
               </h2>
+              {/* Description */}
               <p className="text-lg mt-1 leading-8">{data.description}</p>
             </div>
           ))}

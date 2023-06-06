@@ -1,6 +1,7 @@
 import React from "react";
 
 const Work = () => {
+  // Array of work objects
   const works = [
     {
       title: "Furniture e-commerce App",
@@ -41,6 +42,7 @@ const Work = () => {
           <p className="text-xl py-6">During my experience as a self-taught developer, I have created many projects and shared them on LinkedIn and GitHub. I am always on the lookout for new and challenging projects to work on.</p>
         </div>
         <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4 mt-7">
+          {/* Map over the works array and render each work */}
           {works.map((work) => (
             <a
               href={work.workUrl}
@@ -49,15 +51,18 @@ const Work = () => {
               className="bg-slate-200 rounded-lg overflow-hidden"
               key={work.title}
             >
+              {/* Work image */}
               <img
                 src={work.imgUrl}
                 alt="work"
                 className="w-full h-36 md:h-48 object-cover"
               />
+              {/* Work details */}
               <div className="w-full p-5 text-black">
                 <h3 className="text-lg md:text-xl mb-2 md:mb-3 font-semibold">
                   {work.title}
                 </h3>
+                {/* Technologies */}
                 <p className="flex flex-wrap gap-2 flex-row items-center justify-start text-xs md:text-sm ">
                   {work.tech.map((item) => (
                     <span

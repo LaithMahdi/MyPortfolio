@@ -1,10 +1,9 @@
 import React from 'react'
-import {HiArrowNarrowRight} from 'react-icons/hi'
+import { HiArrowNarrowRight } from 'react-icons/hi'
 import Typewriter from "typewriter-effect";
 
 const Home = () => {
   return (
-    // bg-[#3A1078] dark:bg-[#21073C]
     <div name="home" className="w-full h-screen bg-gradient-to-l from-[#21073C] to-[#3A1078]">
       {/* Container */}
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full">
@@ -14,7 +13,7 @@ const Home = () => {
         </h1>
         <div>
           <h2 className="text-2xl sm:text-4xl font-bold text-zinc-50 pt-2 flex">
-            <span className='mr-2'>I'am</span>
+            <span className='mr-2'>I am</span>
             <Typewriter
               options={{
                 loop: true,
@@ -24,15 +23,14 @@ const Home = () => {
                   .typeString("UI/UX designer")
                   .pauseFor(1000)
                   .deleteAll()
-                  .typeString("Junior flutter developer")
-
+                  .typeString("Junior Flutter developer")
                   .start();
               }}
             />
           </h2>
         </div>
         <p className="text-gray-300 py-4 leading-8">
-          with a passion for creating captivating user experiences, I specialize
+          With a passion for creating captivating user experiences, I specialize
           in developing mobile applications using Flutter while incorporating
           appealing design principles.
         </p>
@@ -50,4 +48,4 @@ const Home = () => {
   );
 }
 
-export default Home
+export default Home;
