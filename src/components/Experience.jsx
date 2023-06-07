@@ -1,34 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { experiences } from "../data/Static";
 
 const Experience = () => {
-  // Array of experience objects
-  const experiences = [
-    {
-      date: "January 2023 - February 2023",
-      company: "AfterCode",
-      position: "Flutter Developer",
-      description:
-        "I successfully developed a mobile application for managing a healthcare facility, catering to both the administrative staff and patients. This involved conducting a thorough study, designing intuitive interfaces, and seamlessly integrating the Backend system.",
-    },
-    {
-      date: "January 2022 - February 2022",
-      company: "AfterCode",
-      position: "Internship",
-      description:
-        "I have expertise in creating visually captivating and user-friendly websites for restaurants. Additionally, I possess skills in managing automated tests to ensure optimal functionality and performance.",
-    },
-    {
-      date: "January 2020 - Present",
-      company: "Self employed",
-      position: "Freelancer",
-      description:
-        "I specialize in designing user interfaces for websites and mobile applications. I also create logos, posters, and mockups. My designs are visually appealing, intuitive, and tailored to engage target audiences. With a deep understanding of design principles and industry trends, I consistently deliver high-quality work that captivates users.",
-    },
-  ];
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div
-      id="experience"
+      name="experience"
       className="min-h-screen bg-gradient-to-l from-[#21073C] to-[#3A1078] text-gray-300 py-32"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center  h-full text-white">
@@ -49,7 +31,8 @@ const Experience = () => {
                 index % 2 === 0
                   ? "border-l-4 md:items-start"
                   : "md:items-end md:border-r-4 md:text-right"
-              } `}
+              } `}   data-aos="fade-up"
+              data-aos-duration="800"
             >
               {/* Date */}
               <h1

@@ -3,6 +3,7 @@ import Logo from "../assets/logo.png";
 import { FaTimes, FaGithub, FaLinkedin, FaBehance } from "react-icons/fa";
 import { BsGridFill } from "react-icons/bs";
 import { HiArrowSmUp, HiMail } from "react-icons/hi";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   // State variables
@@ -55,14 +56,28 @@ const Navbar = () => {
       <div>
         <img src={Logo} alt="logo" style={{ width: "35px" }} />
       </div>
-      {/*  menu  */}
-      <ul className="hidden md:flex ">
-        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Home</li>
-        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">About</li>
-        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Skills</li>
-        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Experience</li>
-        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Work</li>
-        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Contact</li>
+
+      {/* menu */}
+      <ul className="hidden md:flex">
+        {/* Added comments for each navigation item */}
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+          <Link to='home' smooth={true} duration={500}>Home</Link>
+        </li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+          <Link to='about' smooth={true} duration={500}>About</Link>
+        </li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+          <Link to='skill' smooth={true} duration={500}>Skills</Link>
+        </li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+          <Link to='experience' smooth={true} duration={500}>Experience</Link>
+        </li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+          <Link to='work' smooth={true} duration={500}>Work</Link>
+        </li>
+        <li className="hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+          <Link to='contact' smooth={true} duration={500}>Contact</Link>
+        </li>
       </ul>
 
       {/* Hamburger */}
@@ -76,17 +91,32 @@ const Navbar = () => {
           ? "hidden"
           : "absolute top-0 left-0 w-full h-screen bg-[#3A1078] dark:bg-[#21073C]  flex flex-col justify-center items-center transition ease-in-out duration-300 delay-700"
       }>
+        {/* Added comments for mobile menu */}
         <div>
           <img src={Logo} alt="logo" style={{ width: "45px" }} className="mb-7" />
         </div>
         <ul
           className='w-full  flex flex-col justify-center items-center'
         >
-          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Home</li>
-          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">About</li>
-          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Skills</li>
-          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Work</li>
-          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">Contact</li>
+          {/* Added comments for each mobile menu item */}
+          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+            <Link onClick={handleClick} to='home' smooth={true} duration={500}>Home</Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+            <Link onClick={handleClick} to='about' smooth={true} duration={500}>About</Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+            <Link onClick={handleClick} to='skill' smooth={true} duration={500}>Skills</Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+            <Link onClick={handleClick} to='experience' smooth={true} duration={500}>Experience</Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+            <Link onClick={handleClick} to='work' smooth={true} duration={500}>Work</Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-[#00FFCA] hover:translate-y-1 hover:duration-200 active:text-[#00FFCA]">
+            <Link onClick={handleClick} to='contact' smooth={true} duration={500}>Contact</Link>
+          </li>
         </ul>
         <div className="mt-10">
           <p>Copyright all rights reserved © 2023</p>
@@ -106,7 +136,7 @@ const Navbar = () => {
         <ul>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-slate-200 rounded-e-2xl font-semibold">
             <a
-              href="/"
+              href="https://www.linkedin.com/in/laith-mahdi-06458523a/"
               className="flex justify-between items-center w-full text-[#3A1078]"
             >
               Linkedin <FaLinkedin size={30} />
@@ -115,7 +145,7 @@ const Navbar = () => {
 
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-slate-200 rounded-e-2xl font-semibold">
             <a
-              href="/"
+              href="https://github.com/LaithMahdi"
               className="flex justify-between items-center w-full text-[#3A1078]"
             >
               Github <FaGithub size={30} />
@@ -124,7 +154,7 @@ const Navbar = () => {
 
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-slate-200 rounded-e-2xl font-semibold">
             <a
-              href="/"
+              href="https://www.behance.net/Laith-Mahdi"
               className="flex justify-between items-center w-full text-[#3A1078]"
             >
               Behance <FaBehance size={30} />
@@ -133,7 +163,7 @@ const Navbar = () => {
 
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-slate-200 rounded-e-2xl font-semibold">
             <a
-              href="/"
+              href="mailto:mahdilaith380@gmail.com" 
               className="flex justify-between items-center w-full text-[#3A1078]"
             >
               Email <HiMail size={30} />

@@ -1,39 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { works } from "../data/Static";
 
 const Work = () => {
-  // Array of work objects
-  const works = [
-    {
-      title: "Furniture e-commerce App",
-      imgUrl:
-        'https://cdn.dribbble.com/users/6870886/screenshots/20051488/media/f16e46c91563fd48d6b80c37b48ac6df.png?compress=1&resize=1000x750&vertical=top',
-      tech: ['Flutter','Figma','Material UI'],
-      workUrl: 'https://github.com/',
-    },
-    
-    {
-      title: "Photography Portfolio Website",
-      imgUrl:
-        'https://cdn.dribbble.com/users/6870886/screenshots/19725277/media/51d626308c85e403aa3e3ab67ba22022.png?compress=1&resize=400x300&vertical=top',
-      tech: ['HTML', 'CSS', 'Bootstrap 5'],
-      workUrl: 'https://github.com/',
-    },
-    {
-      title: "Laith Portfolio Website",
-      imgUrl:
-        'https://cdn.dribbble.com/users/6870886/screenshots/20208089/portfilio1_cover.jpg',
-      tech: ['Django', 'CSS','Boottsrap 5','Jquery'],
-      workUrl: 'https://github.com/',
-    },
-    {
-      title: 'Maklti food app',
-      imgUrl:
-        'https://cdn.dribbble.com/users/6870886/screenshots/19057557/cover_dribbble.png',
-      tech: ['Flutter','Figma','Material UI'],
-      workUrl: 'https://github.com/',
-    }
-  ];
-
+  useEffect(() => {
+    AOS.init();
+  }, []);
+  
   return (
     <div name="work" className="w-full bg-gradient-to-l from-[#21073C] to-[#3A1078] py-32">
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center  h-full text-white">
@@ -49,7 +23,7 @@ const Work = () => {
               target="_blank"
               rel="noreferrer"
               className="bg-slate-200 rounded-lg overflow-hidden"
-              key={work.title}
+              key={work.title} data-aos="fade-up" data-aos-duration={work.duration} data-aos-easing="linear"
             >
               {/* Work image */}
               <img

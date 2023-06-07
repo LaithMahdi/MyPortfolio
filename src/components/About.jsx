@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import pic from "../assets/pic1.jpg";
 import { BsDownload } from "react-icons/bs";
 import { saveAs } from "file-saver";
 import file from "../assets/cv.pdf";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   /**
    * Handles the download button click event and downloads the resume file.
    */
@@ -29,7 +34,7 @@ const About = () => {
         </div>
         <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
           {/* Profile picture */}
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center" data-aos="fade-right" data-aos-duration="800" data-aos-easing="linear">
             <img
               src={pic}
               alt="mahdi laith"
